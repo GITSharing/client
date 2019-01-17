@@ -21,47 +21,22 @@
   <body>
     <div id="app">
 
-        <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="#">Start Bootstrap</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home
-                  <span class="sr-only">(current)</span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Post Your GIF</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-  
+      <!-- NAVBAR -->
+      <navbar-component></navbar-component>
+
+      <!-- UPLOAD-FORM -->
+      <upload-component></upload-component>
+
       <!-- Page Content -->
       <div class="container">
-  
+
         <div class="row">
-  
-          <div class="col-lg-3">
-            <!-- SIDEBAR -->
-            <h1 class="my-4">Shop Name</h1>
-            <div class="list-group">
-              <a href="#" class="list-group-item">Category 1</a>
-              <a href="#" class="list-group-item">Category 2</a>
-              <a href="#" class="list-group-item">Category 3</a>
-            </div>
-  
-          </div>
-          <!-- /.col-lg-3 -->
-  
+
+          <!-- SIDEBAR -->
+          <sidebar-component></sidebar-component>
+
           <div class="col-lg-9">
-  
+
             <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
               <!-- SLIDING IMAGE -->
               <ol class="carousel-indicators">
@@ -90,9 +65,9 @@
               </a>
             </div>
             <!-- /SLIDING IMAGE -->
-  
+
             <div class="row">
-  
+
               <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
                   <a href="#"><img class="card-img-top" src="/280.gif" alt=""></a>
@@ -108,7 +83,7 @@
                   </div>
                 </div>
               </div>
-  
+
               <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
                   <a href="#"><img class="card-img-top" src="/336.gif" alt=""></a>
@@ -124,7 +99,7 @@
                   </div>
                 </div>
               </div>
-  
+
               <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
                   <a href="#"><img class="card-img-top" src="/giphy.gif" alt=""></a>
@@ -140,19 +115,19 @@
                   </div>
                 </div>
               </div>
-  
+
             </div>
             <!-- /.row -->
-  
+
           </div>
           <!-- /.col-lg-9 -->
-  
+
         </div>
         <!-- /.row -->
-  
+
       </div>
       <!-- /.container -->
-  
+
       <!-- Footer -->
       <footer class="py-5 bg-dark">
         <div class="container">
@@ -160,16 +135,22 @@
         </div>
         <!-- /.container -->
       </footer>
+      <!--  -->
 
+      <!--  -->
     </div>
-  
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.22/dist/vue.js"></script>
     <script src="script/formuploadcomponent.js"></script>
     <script src="script/listcomponent.js"></script>
+    <script src="script/navbar-component.js"></script>
+    <script src="script/upload-component.js"></script>
+    <script src="script/sidebar-component.js"></script>
     <script src="script/vueapp.js"></script>
 
 

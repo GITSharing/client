@@ -38,6 +38,7 @@ var app = new Vue({
             .catch(err => {
                 console.log(err)
             })
+        },
         gif_modal(gif_data) {
             this.gif_one = gif_data;
             (function(d, s, id) {

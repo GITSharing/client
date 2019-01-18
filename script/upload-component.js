@@ -46,7 +46,7 @@ Vue.component('upload-component', {
             formData.append('gif', this.gif);
             formData.append('title', this.gifTitle);
             formData.append('categories', this.gifCategories);
-            
+
             axios.post(`${server}/gif`, formData,  {
                 headers: {
                     'Content-Type': 'multipart/form-data'
@@ -58,6 +58,7 @@ Vue.component('upload-component', {
                     this.gif = '';
                     $('#modalLoginForm').modal('hide');
                     swal("Success", "Successfully Upload GIF", "success");
+                    this.$emit('success-add')
                 })
                 .catch(error => {
                     swal("Error", "Failed to upload GIF", "error")

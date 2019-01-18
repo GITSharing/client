@@ -1,4 +1,39 @@
 
+Vue.component('show-slider-component', {
+  props:['gif'] ,
+  template :`
+  
+  <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+  <!-- SLIDING IMAGE -->
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="carousel-item active justify-content-center">
+      <img class="d-block img-fluid" :src="gif[0].gif_url" width="200" height="200" alt="First slide">
+    </div>
+    <div class="carousel-item justify-content-center">
+      <img class="d-block img-fluid" :src="gif[1].gif_url" width="200" height="200" alt="Second slide">
+    </div>
+    <div class="carousel-item justify-content-center">
+      <img class="d-block img-fluid" :src="gif[2].gif_url" width="200" height="200" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<!-- /SLIDING IMAGE -->
+  `
+})
+
 Vue.component('show-all-component', {
     data() {
         return {
@@ -45,6 +80,7 @@ Vue.component('content-component', {
     template: `
     <div class="col-lg-9">
 
+        <show-slider-component :gif="gif"></show-slider-component>
         <show-all-component :gif="gif"></show-all-component>
 
     </div>

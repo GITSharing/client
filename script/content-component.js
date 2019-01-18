@@ -1,6 +1,5 @@
-
 Vue.component('show-slider-component', {
-  props:['gif'] ,
+  props:['giftop3'] ,
   template :`
   
   <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
@@ -12,13 +11,13 @@ Vue.component('show-slider-component', {
   </ol>
   <div class="carousel-inner" role="listbox">
     <div class="carousel-item active justify-content-center">
-      <img class="d-block img-fluid" :src="gif[0].gif_url" width="200" height="200" alt="First slide">
+      <img class="d-block img-fluid mx-auto" :src="giftop3[0].gif_url" width="200" height="200" alt="First slide">
     </div>
     <div class="carousel-item justify-content-center">
-      <img class="d-block img-fluid" :src="gif[1].gif_url" width="200" height="200" alt="Second slide">
+      <img class="d-block img-fluid mx-auto" :src="giftop3[1].gif_url" width="200" height="200" alt="Second slide">
     </div>
     <div class="carousel-item justify-content-center">
-      <img class="d-block img-fluid" :src="gif[2].gif_url" width="200" height="200" alt="Third slide">
+      <img class="d-block img-fluid mx-auto" :src="giftop3[2].gif_url" width="200" height="200" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -33,6 +32,8 @@ Vue.component('show-slider-component', {
 <!-- /SLIDING IMAGE -->
   `
 })
+
+
 
 Vue.component('show-all-component', {
     data() {
@@ -76,11 +77,12 @@ Vue.component('content-component', {
 
         }
     },
-    props:['gif'],
+    props:['gif', 'giftop3'],
     template: `
     <div class="col-lg-9">
 
-        <show-slider-component :gif="gif"></show-slider-component>
+
+      <show-slider-component :giftop3="giftop3"></show-slider-component>
         <show-all-component :gif="gif"></show-all-component>
 
     </div>

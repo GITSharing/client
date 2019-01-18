@@ -4,10 +4,11 @@ var app = new Vue({
     data : {
         gifMaster: [],
         gif: [],
-
+        giftop3: [],
     },
     created() {
         this.getGif()
+        this.getTop3()
     },
     methods: {
         getGif() {
@@ -28,6 +29,15 @@ var app = new Vue({
             } else {
                 this.gif = this.gifMaster
             }
+        },
+        getTop3(){
+            axios.get(`${server}/gif/top3`)
+            .then(({data}) => {
+                this.giftop3 =data
+            })
+            .catch(err => {
+                console.log(err)
+            })
         }
     }
 })

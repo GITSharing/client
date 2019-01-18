@@ -35,10 +35,14 @@
           <!-- SIDEBAR -->
           <sidebar-component @categories-input="filtered"></sidebar-component>
 
-          <content-component :gif="gif" :giftop3="giftop3"></content-component>
+          <content-component :gif="gif" :giftop3="giftop3" @gif_modal="gif_modal"></content-component>
         </div>
         <!-- /.row -->
       </div>
+
+      <!-- DETAIL-GIF -->
+      <detail-component :gif_detail="gif_one"></detail-component>
+
       <!-- /.container -->
       <footer-component></footer-component>
 
@@ -58,6 +62,7 @@
     <script src="script/sidebar-component.js"></script>
     <script src="script/content-component.js"></script>
     <script src="script//footer-component.js"></script>
+    <script src="script/detail-component.js"></script>
     <script src="script/vueapp.js"></script>
 
 

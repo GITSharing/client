@@ -42,23 +42,25 @@ Vue.component('show-all-component', {
         }
     },
     props:['gif'],
+    methods: {
+      detail(gif) {
+        this.$emit('gif_modal', gif);
+        $('#detail_modal').modal('show');
+      }
+    },
     template: `
     <div class="row">
 
     <div class="col-lg-4 col-md-6 mb-4" v-for="item in gif">
     <div class="card h-100">
-            <a href="#"><img class="card-img-top" :src="item.gif_url" alt="gif"></a>
+            <a href="#" @click.prevent=detail(item)><img class="card-img-top" :src="item.gif_url" alt="gif"></a>
             <div class="card-body">
               <h4 class="card-title">
-                <a href="#">{{item.title}}</a>
+                <a href="#" @click.prevent=detail(item)>{{item.title}}</a>
               </h4>
               </div>
             <div class="card-footer">
               <p class="card-text">{{item.categories}}</p>
-              <small class="text-muted"><img src="https://img.icons8.com/metro/50/000000/thumb-up.png"> {{item.like}}</small>
-              <div class="fb-share-button"
-              :data-href="item.gif_url"
-              data-layout="button_count">
             </div>
             </div>
           </div>
@@ -82,9 +84,14 @@ Vue.component('content-component', {
     <div class="col-lg-9">
 
 
-      <show-slider-component :giftop3="giftop3"></show-slider-component>
-        <show-all-component :gif="gif"></show-all-component>
+        <show-slider-component :giftop3="giftop3"></show-slider-component>
+        <show-all-component :gif="gif" @gif_modal="gif_modal"></show-all-component>
 
     </div>
-    <!-- /.col-lg-9 -->`
+    <!-- /.col-lg-9 -->`,
+    methods: {
+      gif_modal(gif_data) {
+        this.$emit('gif_modal', gif_data)
+      }
+    }
 })

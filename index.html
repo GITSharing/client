@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>GIF share - Share your gif here</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/shop-homepage.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <div id="app">
+
+      <!-- NAVBAR -->
+      <navbar-component></navbar-component>
+
+      <!-- UPLOAD-FORM -->
+      <upload-component @success-add="getGif"></upload-component>
+
+      <!-- Page Content -->
+      <div class="container mt-5">
+
+        <div class="row">
+
+          <!-- SIDEBAR -->
+          <sidebar-component @categories-input="filtered"></sidebar-component>
+
+          <content-component :gif="gif" :giftop3="giftop3" @gif_modal="gif_modal"></content-component>
+        </div>
+        <!-- /.row -->
+      </div>
+
+      <!-- DETAIL-GIF -->
+      <detail-component :gif_detail="gif_one"></detail-component>
+
+      <!-- /.container -->
+      <footer-component></footer-component>
+
+      <!--  -->
+    </div>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="script/globalscript.js"></script>
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="script/navbar-component.js"></script>
+    <script src="script/upload-component.js"></script>
+    <script src="script/sidebar-component.js"></script>
+    <script src="script/content-component.js"></script>
+    <script src="script//footer-component.js"></script>
+    <script src="script/detail-component.js"></script>
+    <script src="script/vueapp.js"></script>
+
+
+  </body>
+
+</html>

@@ -20,6 +20,10 @@ Vue.component('show-all-component', {
             <div class="card-footer">
               <p class="card-text">{{item.categories}}</p>
               <small class="text-muted"><img src="https://img.icons8.com/metro/50/000000/thumb-up.png"> {{item.like}}</small>
+              <div class="fb-share-button" 
+              :data-href="item.gif_url" 
+              data-layout="button_count">
+            </div>
             </div>
           </div>
         </div>

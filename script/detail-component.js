@@ -1,6 +1,6 @@
-Vue.component('upload-component', {
+Vue.component('detail-component', {
     template: `
-    <div class="modal fade" id="modalLoginForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="detail_component" tabindex="-1" role="dialog" aria-labelledby="detailLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -37,34 +37,6 @@ Vue.component('upload-component', {
             gifTitle: '',
             gifCategories: '',
             gif: ''
-        }
-    },
-    methods: {
-        postGif() {
-
-            let formData = new FormData();
-            formData.append('gif', this.gif);
-            formData.append('title', this.gifTitle);
-            formData.append('categories', this.gifCategories);
-            
-            axios.post(`${server}/gif`, formData,  {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            })
-                .then(({ data }) => {
-                    this.gifTitle = '';
-                    this.gifCategories = '';
-                    this.gif = '';
-                    $('#modalLoginForm').modal('hide');
-                    swal("Success", "Successfully Upload GIF", "success");
-                })
-                .catch(error => {
-                    swal("Error", "Failed to upload GIF", "error")
-                })
-        },
-        onFileChange(event) {
-            this.gif = event.target.files[0];
         }
     }
 })

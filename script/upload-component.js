@@ -41,7 +41,13 @@ Vue.component('upload-component', {
     },
     methods: {
         postGif() {
-
+            console.log('masuk postGif');
+            let obj = {
+                title: this.gifTitle,
+                gif: this.gifCategories,
+                image: this.image
+            }
+            console.log(obj);
         },
         onFileChange(event) {
             this.image = event.target.files[0];

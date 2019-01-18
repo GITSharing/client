@@ -28,14 +28,14 @@
       <upload-component></upload-component>
 
       <!-- Page Content -->
-      <div class="container">
+      <div class="container mt-5">
 
         <div class="row">
 
           <!-- SIDEBAR -->
-          <sidebar-component></sidebar-component>
+          <sidebar-component @categories-input="filtered"></sidebar-component>
 
-  
+
           <content-component :gif="gif"></content-component>
         </div>
         <!-- /.row -->

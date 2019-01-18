@@ -21,7 +21,7 @@ Vue.component('upload-component', {
                         </div>
                         <div class="form-group">
                             <label class="col-form-label">Image:</label>
-                            <input type="file" name="avatar">
+                            <input type="file" @change="onFileChange">
                         </div>
                     </div>
                 <div class="modal-footer">
@@ -36,11 +36,21 @@ Vue.component('upload-component', {
         return {
             gifTitle: '',
             gifCategories: '',
+            image: {}
         }
     },
     methods: {
         postGif() {
-
-        }
+            console.log('masuk postGif');
+            let obj = {
+                title: this.gifTitle,
+                gif: this.gifCategories,
+                image: this.image
+            }
+            console.log(obj);
+        },
+        onFileChange(event) {
+            this.image = event.target.files[0];
+          },
     }
 })
